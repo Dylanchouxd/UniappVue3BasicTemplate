@@ -14,6 +14,13 @@ export default ({ mode }: ConfigEnv): UserConfig => {
         '@': resolve('./src'),
       },
     },
+     css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@import "@/style/index.scss";',
+        },
+      },
+    },
     build: {
       minify: 'terser',
       terserOptions: {
