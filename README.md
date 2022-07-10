@@ -8,10 +8,11 @@
 
 ## 特色
 
-- **格式规范：**使用 Eslint 和 Prettier 规范代码格式。
-- **请求拦截：**使用 [luch-request](https://github.com/lei-mu/luch-request) 库，支持多平台，支持请求和响应拦截。
-- **路由拦截：**基于Uniapp提供的`uni.addInterceptor`进行路由拦截。
-- **本地缓存加密：**封装localStorage操作，使用 [crypto](https://github.com/brix/crypto-js) 库，对其生产模式使用AES加密处理。
+- 格式规范：使用 Eslint 和 Prettier 规范代码格式。
+- 请求拦截：使用 [luch-request](https://github.com/lei-mu/luch-request) 库，支持多平台，支持请求和响应拦截。
+- 路由拦截：基于Uniapp提供的`uni.addInterceptor`进行路由拦截。
+- 本地缓存加密：封装localStorage操作，使用 [crypto](https://github.com/brix/crypto-js) 库，对其生产模式使用AES加密处理。
+- 暗黑模式主题：适配H5和小程序暗黑模式，自动监听暗黑模式而切换主题。
 
 ## 说明
 
@@ -42,6 +43,16 @@
 ### 本地缓存加密
 
 建议加密的 `iv` 和 `key` 写在 `.env.production` 里面，防止公开在代码管理上留有记录。
+
+### 暗黑模式使用方式
+
+暗黑模式适配主要是靠CSS`媒体查询`监听模式切换和`CSSVar变量`实现的适配；
+
+即页面上主要的色块都在 文件src/style/common.scss `:root` 上定义，其他页面使用这里面的变量；监听`prefers-color-scheme: dark`，当变成dark的时候用另外一套暗黑主题变量覆盖，从而达到适配暗黑主题的目的。
+
+
+
+其中微信小程序的适配可以前往[官方文档](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/darkmode.html#%E5%BC%80%E5%90%AF-DarkMode)了解，项目内已经配置，过多详情就不再赘述了。
 
 ## 目录结构
 ```shell
@@ -109,6 +120,7 @@
 │  ├─ env.d.ts
 │  ├─ main.ts
 │  ├─ manifest.json
+│  ├─ theme.json # 微信暗黑模式文件
 ├─ tsconfig.json
 ├─ vite.config.ts
 ├─ yarn-error.log

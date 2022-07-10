@@ -38,6 +38,11 @@
 		"backgroundColor": "#F8F8F8",
 		"h5": {
 			"titleNView": false
+		},
+		"mp-weixin": {
+			"backgroundColor": "@bgColor",
+			"navigationBarBackgroundColor": "@navBgColor",
+			"navigationBarTextStyle": "@navTxtStyle"
 		}
 	},
 	"tabBar": {
@@ -64,6 +69,11 @@
 				"iconPath": "static/images/tarbar/me.png",
 				"selectedIconPath": "static/images/tarbar/me_active.png"
 			}
-		]
+		],
+		"mp-weixin": {
+			"backgroundColor": "@tabBgColor",
+			"color": "@tabFontColor",
+			"selectedColor": "@tabFontColor"
+		}
 	}
 }

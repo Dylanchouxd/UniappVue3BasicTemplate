@@ -45,6 +45,7 @@ request.interceptors.request.use(
 request.interceptors.response.use(
   (response: HttpResponse<API<any>>) => {
     const { data: resData } = response;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
     const { code, message, data } = resData;
     if (code === 0) {
       return resData as any;

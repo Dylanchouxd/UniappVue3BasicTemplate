@@ -1,1 +1,34 @@
 // 一些通用样式
+
+// 暗黑模式过渡
+view, text {
+  transition: color .3s linear, backgroundColor .3s linear, background .3s linear;
+}
+
+// 默认主题（白）
+:root {
+  --theme-bg-color: #fff;
+  --theme-title-color: #282828;
+}
+
+// 暗黑模式
+@media (prefers-color-scheme: dark) {
+  :root {
+    --theme-bg-color: #222426;
+    --theme-title-color: #fff;
+  }
+
+  /* #ifndef MP-WEIXIN */
+  // 适配页面颜色
+  uni-app {
+    background: var(--theme-bg-color);
+  }
+  // 适配tarbar
+  .uni-tabbar {
+    background-color: #111111 !important;
+    .uni-tabbar__label {
+      color: #fff !important;
+    }
+  }
+  /* #endif */
+}

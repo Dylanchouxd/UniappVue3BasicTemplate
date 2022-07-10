@@ -9,21 +9,20 @@
 
 <script setup lang="ts">
   import { ref } from 'vue';
-  const title = ref('Hello');
+  const title = ref('当前页面适配使用css Var适配暗黑模式');
 </script>
 
-<style>
+<style lang="scss" scoped>
   .content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    padding-top: 300rpx;
   }
 
   .logo {
     height: 200rpx;
     width: 200rpx;
-    margin-top: 200rpx;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 50rpx;
@@ -36,6 +35,6 @@
 
   .title {
     font-size: 36rpx;
-    color: #8f8f94;
+    color: var(--theme-title-color);
   }
 </style>

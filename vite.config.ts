@@ -1,5 +1,6 @@
 import { ConfigEnv, UserConfig } from 'vite';
 import uni from '@dcloudio/vite-plugin-uni';
+import eslintPlugin from 'vite-plugin-eslint';
 import { resolve } from 'path';
 import { loadEnv } from 'vite';
 
@@ -14,7 +15,7 @@ export default ({ mode }: ConfigEnv): UserConfig => {
         '@': resolve('./src'),
       },
     },
-     css: {
+    css: {
       preprocessorOptions: {
         scss: {
           additionalData: '@import "@/style/index.scss";',
@@ -41,6 +42,11 @@ export default ({ mode }: ConfigEnv): UserConfig => {
       //   },
       // },
     },
-    plugins: [uni()],
+    plugins: [
+      uni(),
+      eslintPlugin({
+        include: ['src/**/*.ts', 'src/**/*.vue', 'src/*.ts', 'src/*.vue'],
+      }),
+    ],
   };
 };
