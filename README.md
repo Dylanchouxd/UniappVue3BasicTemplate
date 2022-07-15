@@ -144,13 +144,19 @@
 
 ```shell
 # node 版本需要 16 以上
-yarn run install
+yarn install
 ```
 
 运行H5
 
 ```shell
 yarn run dev:h5
+```
+
+运行微信小程序
+
+```shell
+yarn run dev:mp-weixin
 ```
 
 ## Git 贡献提交规范
