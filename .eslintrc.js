@@ -33,14 +33,14 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-var': 'error',
-    'prettier/prettier': 'error',
+    'no-var': 'warn',
+    'prettier/prettier': 'warn',
     'vue/no-multiple-template-root': 'off',
     'no-mutating-props': 'off',
     'vue/no-v-html': 'off',
     // @fixable 必须使用单引号，禁止使用双引号
     quotes: [
-      'error',
+      'warn',
       'single',
       {
         avoidEscape: true,
@@ -49,7 +49,7 @@ module.exports = {
     ],
     // 结尾必须有分号;
     semi: [
-      'error',
+      'warn',
       'always',
       {
         omitLastInOneLineBlock: true,
@@ -94,7 +94,7 @@ module.exports = {
     'vue/attribute-hyphenation': 'off',
     'vue/require-default-prop': 'off',
     'vue/html-self-closing': [
-      'error',
+      'warn',
       {
         html: {
           void: 'always',
